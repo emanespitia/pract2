@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JQZ-jc-E9g">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MWn-O6-YFk">
     <device id="retina6_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
@@ -8,12 +8,12 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--convert-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="pract2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="839"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pju-YK-iC9">
@@ -63,24 +63,49 @@
                             <constraint firstItem="Pju-YK-iC9" firstAttribute="top" secondItem="1th-6G-mr7" secondAttribute="bottom" constant="8" id="mnw-Oe-5wc"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="convert" image="thermometer.variable.and.figure" catalog="system" id="ouZ-Cw-HTH"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5.343511450381679" y="-2.1126760563380285"/>
         </scene>
-        <!--View Controller-->
+        <!--map-->
         <scene sceneID="rJr-I9-Eos">
             <objects>
                 <viewController id="JQZ-jc-E9g" sceneMemberID="viewController">
                     <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="mIL-fd-bgQ">
-                        <rect key="frame" x="0.0" y="0.0" width="440" height="956"/>
+                        <rect key="frame" x="0.0" y="0.0" width="440" height="839"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <standardMapConfiguration key="preferredConfiguration"/>
                     </mapView>
+                    <tabBarItem key="tabBarItem" title="map" image="mappin.circle" catalog="system" selectedImage="mappin.circle" id="qmb-Hj-qaz"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MaX-Vq-2xr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="683" y="-3"/>
+            <point key="canvasLocation" x="1573.6363636363637" y="-3.1380753138075317"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="IOy-bt-RLa">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="MWn-O6-YFk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="m4W-Ep-Mqd">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Lm1-oG-EE6"/>
+                        <segue destination="JQZ-jc-E9g" kind="relationship" relationship="viewControllers" id="rBw-De-csl"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uf6-7X-mrZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="681.81818181818187" y="-3.1380753138075317"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="mappin.circle" catalog="system" width="128" height="123"/>
+        <image name="thermometer.variable.and.figure" catalog="system" width="128" height="126"/>
+    </resources>
 </document>
