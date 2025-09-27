@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController { 
+class MapViewController: UIViewController {
     var mapView: MKMapView!
 
     override func loadView() {
@@ -19,32 +19,59 @@ class MapViewController: UIViewController {
         view = mapView
         
         //segmented controls
-        let segmentedControl
-            = UISegmentedControl(items: ["Standard", "Hybrid", "Satellite"])
-        segmentedControl.backgroundColor = UIColor.systemBackground
-        segmentedControl.selectedSegmentIndex = 0
+        let segmentedControl = UISegmentedControl(items: ["Standard", "Hybrid", "Satellite"])
+            segmentedControl.backgroundColor = UIColor.systemBackground
+            segmentedControl.selectedSegmentIndex = 0
         
-        segmentedControl.addTarget(self,
-                                   action: #selector(mapTypeChanged(_:)),
-                                   for: .valueChanged)
+            segmentedControl.addTarget(self,action: #selector(mapTypeChanged(_:)),for: .valueChanged)
 
-        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(segmentedControl)
+            segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(segmentedControl)
         
         //defined constraints
         let topConstraint =
-            segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,
-                                                  constant: 8)
-        let margins = view.layoutMarginsGuide
+            segmentedControl.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 8)
         let leadingConstraint =
-            segmentedControl.leadingAnchor.constraint(equalTo: margins.leadingAnchor)
+            segmentedControl.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 8)
         let trailingConstraint =
-            segmentedControl.trailingAnchor.constraint(equalTo: margins.trailingAnchor)
+            segmentedControl.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -8)
+        
+        let heightConstraint =
+            segmentedControl.heightAnchor.constraint(equalToConstant: 32)
         
         //activate constraints
         topConstraint.isActive = true
         leadingConstraint.isActive = true
         trailingConstraint.isActive = true
+        heightConstraint.isActive = true
+        
+        // Label for POIs
+        let poiLabel = UILabel()
+        poiLabel.text = "Points of Interest"
+        poiLabel.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(poiLabel)
+
+        // Switch for POIs
+        let poiSwitch = UISwitch()
+        poiSwitch.isOn = true   // start with POIs visible
+        poiSwitch.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(poiSwitch)
+
+        poiSwitch.addTarget(self,
+                            action: #selector(togglePOIs(_:)),
+                            for: .valueChanged)
+
+        // Constraints for label + switch
+        NSLayoutConstraint.activate([
+            poiLabel.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 12),
+            poiLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+
+            poiSwitch.centerYAnchor.constraint(equalTo: poiLabel.centerYAnchor),
+            poiSwitch.leadingAnchor.constraint(equalTo: poiLabel.trailingAnchor, constant: 8)
+        ])
+        
+        
+        
         
     }
 
@@ -66,5 +93,14 @@ class MapViewController: UIViewController {
             break
         }
     }
+    
+    @objc func togglePOIs(_ sender: UISwitch) {
+        if sender.isOn {
+               mapView.pointOfInterestFilter = .includingAll
+           }
+        else {
+               mapView.pointOfInterestFilter = .excludingAll
+           }
+       }
 
 }

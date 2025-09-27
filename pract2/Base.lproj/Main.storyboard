@@ -14,7 +14,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ConversionViewController" customModule="pract2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" misplaced="YES" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="849"/>
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="815"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="degrees Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pju-YK-iC9">
@@ -73,7 +73,7 @@
         <!--map-->
         <scene sceneID="rJr-I9-Eos">
             <objects>
-                <viewController id="JQZ-jc-E9g" customClass="MapViewConroller" customModule="pract2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="JQZ-jc-E9g" customClass="MapViewController" customModule="pract2" customModuleProvider="target" sceneMemberID="viewController">
                     <mapView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="mIL-fd-bgQ">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="849"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -109,9 +109,9 @@
         <!--questions-->
         <scene sceneID="0lg-mE-Hgb">
             <objects>
-                <viewController id="8cw-rR-Il5" customClass="ViewController" customModule="pract_app" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dhA-09-FSB">
-                        <rect key="frame" x="0.0" y="0.0" width="430" height="849"/>
+                <viewController id="8cw-rR-Il5" customClass="ViewController" customModule="pract2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="dhA-09-FSB">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="815"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="???" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcW-Js-exh">
