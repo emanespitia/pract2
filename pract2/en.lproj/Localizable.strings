@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  pract2
+
+  Created by emanuel espitia on 10/10/25.
+  
+*/
+
+
+/* Hybrid map view */
+"Hybrid" = "Híbrido";
+
+/* Satellite map view */
+"Satellite" = "Satélite";
+
+/* Standard map view */
+"Standard" = "Estándar";
